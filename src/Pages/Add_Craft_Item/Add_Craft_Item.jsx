@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import CommonBanner from '../CommonBanner/CommonBanner';
 import Swal from 'sweetalert2'
 import { UserContext } from '../AuthContext/AuthContext';
+import { Fade } from 'react-awesome-reveal';
 
 const Add_Craft_Item = () => {
     const pageName = 'Add Craft Item';
@@ -60,106 +61,108 @@ const Add_Craft_Item = () => {
                         </select>
                         <input className="btn bg-purple-950 text-white w-full md:w-auto hover:text-black" type="submit" value="Add craft data" />
                     </div>
-
-                    {categoryName && <>
-                        {/* input photo url, item name */}
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Photo URL</span>
-                                </label>
-                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered input-accent" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Item Name</span>
-                                </label>
-                                <input type="text" name="itemName" placeholder="Item name" className="input input-bordered input-accent" required />
-                            </div>
-                        </div>
-
-                        {/* input subcategory, price, processing_time */}
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Subcategory name</span>
-                                </label>
-                                <input type="text" name="subcategory" placeholder="subcategory name" className="input input-bordered input-accent" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Price</span>
-                                </label>
-                                <input type="text" name="price" placeholder="Product Price" className="input input-bordered input-accent" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">processing time</span>
-                                </label>
-                                <input type="text" name="processing_time" placeholder="processing time" className="input input-bordered input-accent" required />
+                    <Fade cascade>
+                        {categoryName && <>
+                            {/* input photo url, item name */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Photo URL</span>
+                                    </label>
+                                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered input-accent" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Item Name</span>
+                                    </label>
+                                    <input type="text" name="itemName" placeholder="Item name" className="input input-bordered input-accent" required />
+                                </div>
                             </div>
 
-                            {/* rating, customization,stock */}
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Rating</span>
-                                </label>
-                                <select name='rating' className="select select-accent w-full">
-                                    <option disabled selected>Please select a rating</option>
-                                    <option>One star</option>
-                                    <option>Two star</option>
-                                    <option>Three star</option>
-                                    <option>Four star</option>
-                                    <option>Five star</option>
-                                </select>
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Customization</span>
-                                </label>
-                                <select name='customization' className="select select-accent w-full">
-                                    <option disabled selected>Please select a Status</option>
-                                    <option>Okay</option>
-                                    <option>Not okay</option>
-                                </select>
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Stock</span>
-                                </label>
-                                <select name='stock' className="select select-accent w-full">
-                                    <option disabled selected>Please select a rating</option>
-                                    <option>In stock</option>
-                                    <option>Made to order</option>
-                                </select>
-                            </div>
-                        </div>
+                            {/* input subcategory, price, processing_time */}
+                            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Subcategory name</span>
+                                    </label>
+                                    <input type="text" name="subcategory" placeholder="subcategory name" className="input input-bordered input-accent" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Price</span>
+                                    </label>
+                                    <input type="text" name="price" placeholder="Product Price" className="input input-bordered input-accent" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">processing time</span>
+                                    </label>
+                                    <input type="text" name="processing_time" placeholder="processing time" className="input input-bordered input-accent" required />
+                                </div>
 
-                        {/* input user name, user email */}
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">User Name</span>
-                                </label>
-                                <input type="text" name="name" placeholder="user name" className="input input-bordered input-accent" value={user?.displayName} required />
+                                {/* rating, customization,stock */}
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Rating</span>
+                                    </label>
+                                    <select name='rating' className="select select-accent w-full">
+                                        <option disabled selected>Please select a rating</option>
+                                        <option>One star</option>
+                                        <option>Two star</option>
+                                        <option>Three star</option>
+                                        <option>Four star</option>
+                                        <option>Five star</option>
+                                    </select>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Customization</span>
+                                    </label>
+                                    <select name='customization' className="select select-accent w-full">
+                                        <option disabled selected>Please select a Status</option>
+                                        <option>Okay</option>
+                                        <option>Not okay</option>
+                                    </select>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Stock</span>
+                                    </label>
+                                    <select name='stock' className="select select-accent w-full">
+                                        <option disabled selected>Please select a rating</option>
+                                        <option>In stock</option>
+                                        <option>Made to order</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">User Email</span>
-                                </label>
-                                <input type="email" name="email" placeholder="user email" className="input input-bordered input-accent" value={user?.email} required />
+
+                            {/* input user name, user email */}
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">User Name</span>
+                                    </label>
+                                    <input type="text" name="name" placeholder="user name" className="input input-bordered input-accent" value={user?.displayName} required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">User Email</span>
+                                    </label>
+                                    <input type="email" name="email" placeholder="user email" className="input input-bordered input-accent" value={user?.email} required />
+                                </div>
                             </div>
-                        </div>
-                        {/* input description */}
-                        <div className="grid grid-cols-1 gap-5">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-semibold">Description</span>
-                                </label>
-                                <textarea name="description" placeholder="Description" className="textarea textarea-bordered textarea-accent" required></textarea>
+                            {/* input description */}
+                            <div className="grid grid-cols-1 gap-5">
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-semibold">Description</span>
+                                    </label>
+                                    <textarea name="description" placeholder="Description" className="textarea textarea-bordered textarea-accent" required></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </>}
+                        </>}
+                    </Fade>
+
                 </form>
             </section>
         </>

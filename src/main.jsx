@@ -10,6 +10,7 @@ const Add_Craft_Item = lazy(() => import('./Pages/Add_Craft_Item/Add_Craft_Item.
 const Signin = lazy(() => import('./Pages/Signin/Signin.jsx'));
 const All_Art_And_Craft_Items = lazy(() => import('./Pages/All_Art_And_Craft_Items/All_Art_And_Craft_Items.jsx'));
 const My_Art_Craft_Lists = lazy(() => import('./Pages/My_Art_Craft_Lists/My_Art_Craft_Lists.jsx'));
+const CraftViewDetails = lazy(() => import('./Pages/CraftViewDetails/CraftViewDetails.jsx'))
 
 
 const loading =
@@ -37,6 +38,16 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={loading}>
             <All_Art_And_Craft_Items />
+          </Suspense>
+        )
+      },
+      {
+        path: '/craft-view-details/:id',
+        element: (
+          <Suspense fallback={loading}>
+            <PrivatePage>
+              <CraftViewDetails />
+            </PrivatePage>
           </Suspense>
         )
       },

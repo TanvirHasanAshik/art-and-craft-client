@@ -1,1 +1,12 @@
+.active {
+    background-color: white !important;
+    border-bottom: 5px solid purple !important;
+    border-radius: 0 !important;
+    color: purple !important;
+}
+
+a:hover {
+    background-color: white !important;
+}
+
 @import "tailwindcss";

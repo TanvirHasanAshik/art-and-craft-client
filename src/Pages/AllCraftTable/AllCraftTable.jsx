@@ -1,164 +1,53 @@
+import { useContext } from "react";
+import { UserContext } from "../AuthContext/AuthContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
-const AllCraftTable = () => {
+const AllCraftTable = ({ craftItem }) => {
+    const { _id, subcategory, description, stock, itemName, photo } = craftItem;
     return (
-        <div className="overflow-x-auto">
-            <table className="table">
-                {/* head */}
-                <thead>
-                    <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* row 1 */}
-                    <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle h-12 w-12">
-                                        <img
-                                            src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                                            alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Hart Hagerty</div>
-                                    <div className="text-sm opacity-50">United States</div>
-                                </div>
+        <tr >
+            <td>
+                <Fade cascade>
+                    <div className="flex items-center gap-3">
+                        <div className="avatar">
+                            <div className="mask mask-squircle h-12 w-12">
+                                <LazyLoadImage src={photo} />
+
                             </div>
-                        </td>
-                        <td>
-                            Zemlak, Daniel and Leannon
-                            <br />
-                            <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                        </td>
-                        <td>Purple</td>
-                        <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
-                        </th>
-                    </tr>
-                    {/* row 2 */}
-                    <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle h-12 w-12">
-                                        <img
-                                            src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                                            alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Brice Swyre</div>
-                                    <div className="text-sm opacity-50">China</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Carroll Group
-                            <br />
-                            <span className="badge badge-ghost badge-sm">Tax Accountant</span>
-                        </td>
-                        <td>Red</td>
-                        <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
-                        </th>
-                    </tr>
-                    {/* row 3 */}
-                    <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle h-12 w-12">
-                                        <img
-                                            src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-                                            alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Marjy Ferencz</div>
-                                    <div className="text-sm opacity-50">Russia</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Rowe-Schoen
-                            <br />
-                            <span className="badge badge-ghost badge-sm">Office Assistant I</span>
-                        </td>
-                        <td>Crimson</td>
-                        <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
-                        </th>
-                    </tr>
-                    {/* row 4 */}
-                    <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle h-12 w-12">
-                                        <img
-                                            src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-                                            alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Yancy Tear</div>
-                                    <div className="text-sm opacity-50">Brazil</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Wyman-Ledner
-                            <br />
-                            <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
-                        </td>
-                        <td>Indigo</td>
-                        <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
-                        </th>
-                    </tr>
-                </tbody>
-                {/* foot */}
-                <tfoot>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
-                        <th></th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+                        </div>
+                        <div>
+                            <div className="font-semibold text-neutral">{itemName}</div>
+                        </div>
+                    </div>
+                </Fade >
+            </td>
+            <td>
+                <Fade cascade>
+                    <div className="font-semibold text-gray-700">{subcategory}</div>
+                </Fade >
+            </td>
+            <td>
+                <Fade cascade>
+                    <div className="text-sm text-neutral">{description.slice(0, 50)}...</div>
+                </Fade >
+            </td>
+            <td>
+                <Fade cascade>
+                    <div className="font-semibold text-neutral">{stock}</div>
+                </Fade >
+            </td>
+            <th>
+                <Fade cascade>
+                    <Link
+                        to={`/craft-view-details/${_id}`}
+                        className="btn bg-purple-950 text-white hover:text-black  btn-xs">
+                        view details</Link>
+                </Fade >
+
+            </th>
+        </tr >
     );
 };
 
