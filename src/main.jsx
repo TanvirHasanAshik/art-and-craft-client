@@ -10,7 +10,8 @@ const Add_Craft_Item = lazy(() => import('./Pages/Add_Craft_Item/Add_Craft_Item.
 const Signin = lazy(() => import('./Pages/Signin/Signin.jsx'));
 const All_Art_And_Craft_Items = lazy(() => import('./Pages/All_Art_And_Craft_Items/All_Art_And_Craft_Items.jsx'));
 const My_Art_Craft_Lists = lazy(() => import('./Pages/My_Art_Craft_Lists/My_Art_Craft_Lists.jsx'));
-const CraftViewDetails = lazy(() => import('./Pages/CraftViewDetails/CraftViewDetails.jsx'))
+const CraftViewDetails = lazy(() => import('./Pages/CraftViewDetails/CraftViewDetails.jsx'));
+const Update = lazy(() => import('./Pages/Update/Update.jsx'));
 
 
 const loading =
@@ -67,6 +68,16 @@ const router = createBrowserRouter([
           <Suspense fallback={loading}><Signin /></Suspense>
         )
       },
+      {
+        path: '/update-craft/:id',
+        element: (
+          <Suspense fallback={loading}>
+            <PrivatePage><Update /></PrivatePage>
+          </Suspense>
+        ),
+        loader:
+          ({ params }) => fetch(`http://localhost:5000/single-craft-item/${params.id}`)
+      }
 
     ],
   },

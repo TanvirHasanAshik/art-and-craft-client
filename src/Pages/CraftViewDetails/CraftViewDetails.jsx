@@ -20,12 +20,12 @@ const CraftViewDetails = () => {
             <section className="my-20">
                 <div className="flex flex-col md:flex-row justify-between gap-5 items-center mx-4">
                     <div className=" w-full md:w-1/2 ">
-                        <Fade>
+                        <Fade cascade>
                             <LazyLoadImage src={craft?.photo} />
                         </Fade>
                     </div>
                     <div className=" w-full md:w-1/2">
-                        <Fade>
+                        <Fade cascade>
                             <div className="border-b-2 pb-4 space-y-4">
                                 <h2 className="font-semibold">{craft?.itemName}</h2>
                                 <h2 className="font-semibold">${craft?.price}</h2>
