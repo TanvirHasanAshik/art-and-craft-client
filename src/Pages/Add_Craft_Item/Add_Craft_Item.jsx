@@ -9,7 +9,6 @@ const Add_Craft_Item = () => {
     const pageName = 'Add Craft Item';
     const [categoryName, setCategoryName] = useState('');
     const { user } = useContext(UserContext);
-    console.log(user)
 
     const handleCategory = (e) => {
         e.preventDefault();

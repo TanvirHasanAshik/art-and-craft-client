@@ -1,10 +1,12 @@
-import React from 'react';
+import CategoriesWeOffer from './CategoriesWeOffer';
+import HomeCraftItemsSection from './HomeCraftItemsSection';
 
 const Home = () => {
     return (
-        <div>
-            <h1>Hello</h1>
-        </div>
+        <>
+            <HomeCraftItemsSection />
+            <CategoriesWeOffer />
+        </>
     );
 };
 

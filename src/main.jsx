@@ -12,6 +12,7 @@ const All_Art_And_Craft_Items = lazy(() => import('./Pages/All_Art_And_Craft_Ite
 const My_Art_Craft_Lists = lazy(() => import('./Pages/My_Art_Craft_Lists/My_Art_Craft_Lists.jsx'));
 const CraftViewDetails = lazy(() => import('./Pages/CraftViewDetails/CraftViewDetails.jsx'));
 const Update = lazy(() => import('./Pages/Update/Update.jsx'));
+const Home = lazy(() => import('./Pages/Home/Home.jsx'));
 
 
 const loading =
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
+      {
+        path: '/',
+        element: <Home />
+      },
       {
         path: "/add-craft-items",
         element: (

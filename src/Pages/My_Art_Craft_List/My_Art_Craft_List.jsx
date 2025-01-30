@@ -44,15 +44,19 @@ const My_Art_Craft_List = ({ myCraft, myCrafts, setMyCrafts }) => {
     return (
         <Fade cascade>
             <section className="w-full lg:w-2/3 border lg:mx-auto min-h-screen md:min-h-60 ">
+                {/* craft card */}
                 <div className="flex flex-col md:flex-row items-center">
+                    {/* craft card image */}
                     <figure className="overflow-hidden w-full h-60 md:w-80 ml-2">
                         <LazyLoadImage className=" w-full md:w-80 h-60 object-cover transform transition-transform duration-500 hover:scale-110" src={photo} />
                     </figure>
+
+                    {/* craft card details */}
                     <div className="mx-auto w-full">
                         <div className="flex m-4 flex-col md:flex-row gap-x-10 bg-amber-100 p-4 rounded-xl">
                             <div className="space-y-1">
-                                <p className="text-accent text-sm font-semibold"><span className="text-purple-900 font-semibold">price: </span>{itemName}</p>
-                                <p className="text-accent text-sm font-semibold"><span className="text-purple-900 font-semibold">Craft: </span>${price}</p>
+                                <p className="text-accent text-sm font-semibold"><span className="text-purple-900 font-semibold">Craft: </span>{itemName}</p>
+                                <p className="text-accent text-sm font-semibold"><span className="text-purple-900 font-semibold">price: </span>${price}</p>
                                 <p className="text-accent text-sm font-semibold"><span className="text-purple-900 font-semibold">Category: </span>{categoryName}</p>
                                 <p className="text-accent text-sm font-semibold"><span className="text-purple-900 font-semibold">process Time: </span>{processing_time}</p>
                             </div>
