@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import CommonBanner from "../CommonBanner/CommonBanner";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 
 const CraftViewDetails = () => {
     const params = useParams();
@@ -16,6 +17,9 @@ const CraftViewDetails = () => {
     }, [params.id])
     return (
         <>
+            <Helmet>
+                <title>Craft View Details</title>
+            </Helmet>
             <CommonBanner pageName={pageName} />
             <section className="my-20">
                 <div className="flex flex-col md:flex-row justify-between gap-5 items-center mx-4">

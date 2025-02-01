@@ -4,6 +4,7 @@ import CommonBanner from '../CommonBanner/CommonBanner';
 import Swal from 'sweetalert2'
 import { UserContext } from '../AuthContext/AuthContext';
 import { Fade } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet';
 
 const Add_Craft_Item = () => {
     const pageName = 'Add Craft Item';
@@ -43,6 +44,9 @@ const Add_Craft_Item = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Add craft Items</title>
+            </Helmet>
             <CommonBanner pageName={pageName} />
 
             {/*add craft category form*/}

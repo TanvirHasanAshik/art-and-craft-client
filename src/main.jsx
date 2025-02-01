@@ -13,7 +13,7 @@ const My_Art_Craft_Lists = lazy(() => import('./Pages/My_Art_Craft_Lists/My_Art_
 const CraftViewDetails = lazy(() => import('./Pages/CraftViewDetails/CraftViewDetails.jsx'));
 const Update = lazy(() => import('./Pages/Update/Update.jsx'));
 const Home = lazy(() => import('./Pages/Home/Home.jsx'));
-
+const Error = lazy(() => import('./Pages/NotFound/NotFound.jsx'));
 
 const loading =
   < div className='h-screen flex justify-center items-center' >
@@ -24,6 +24,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Error />,
     children: [
       {
         path: '/',

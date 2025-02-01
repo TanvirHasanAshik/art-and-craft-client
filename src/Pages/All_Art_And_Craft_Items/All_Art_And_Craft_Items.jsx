@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AllCraftTable from '../AllCraftTable/AllCraftTable';
+import { Helmet } from 'react-helmet';
 
 const All_Art_And_Craft_Items = () => {
 
@@ -16,6 +17,9 @@ const All_Art_And_Craft_Items = () => {
 
     return (
         <div className='my-20'>
+            <Helmet>
+                <title>All craft items</title>
+            </Helmet>
             <div className="overflow-x-auto">
 
                 <table className="table">

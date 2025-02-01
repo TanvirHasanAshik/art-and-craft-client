@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../AuthContext/AuthContext";
 import CommonBanner from "../CommonBanner/CommonBanner";
 import My_Art_Craft_List from "../My_Art_Craft_List/My_Art_Craft_List";
+import { Helmet } from "react-helmet";
 
 const My_Art_Craft_Lists = () => {
     const { user } = useContext(UserContext);
@@ -18,6 +19,9 @@ const My_Art_Craft_Lists = () => {
 
     return (
         <>
+            <Helmet>
+                <title>My Art Craft Lists</title>
+            </Helmet>
             <CommonBanner pageName={pageName} />
             <section className="my-20 ">
                 <div className="grid grid-cols-1 mx-4 gap-8">

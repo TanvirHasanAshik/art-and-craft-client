@@ -6,6 +6,7 @@ import auth from "../../firebase/firebase.config";
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../AuthContext/AuthContext';
+import { Helmet } from 'react-helmet';
 const Signin = () => {
     const pageName = 'Please Sign in';
     const location = useLocation();
@@ -26,6 +27,9 @@ const Signin = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>art & craft | Signin</title>
+            </Helmet>
             <CommonBanner pageName={pageName} />
 
             <div className="flex flex-col items-center justify-center space-y-5 my-20">

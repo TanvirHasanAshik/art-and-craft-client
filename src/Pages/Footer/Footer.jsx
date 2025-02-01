@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <div className=" text-white bg-purple-950">
             <div className="flex flex-col md:flex-row justify-evenly gap-4 items-center pt-20">
-                <div className="flex w-full md:w-fit">
-                    <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs rounded-none text-purple-950 font-semibold" />
+                <div className="flex w-full md:w-fit justify-center px-4">
+                    <input type="text" placeholder="Your email type here" className="input input-bordered w-full max-w-xs rounded-none text-purple-950 font-semibold" />
                     <button className="btn glass rounded-none ml-4">Subscribe</button>
                 </div>
                 <div className="flex text-3xl gap-4">
